@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-bottom: 30px;
+        }
+
+        .signup-form,
+        .login-form {
+            display: none;
+        }
+
+        .button3d {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border: 1px solid #2980b9;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+            margin-right: 10px;
+        }
+
+        .button3d:hover {
+            background: #2980b9;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+
+        /* Add space between buttons */
+        .button-space {
+            margin-top: 10px;
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Techanomic Spark</h1>
+    
+    <div class="signup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address">
+
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" placeholder="Enter your user ID">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+
+        <button class="button3d submit-button" onclick="submitForm('signup')">Submit</button>
+    </div>
+
+    <div class="login-form">
+        <label for="loginUserId">User ID:</label>
+        <input type="text" id="loginUserId" placeholder="Enter your user ID">
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password">
+
+        <button class="button3d submit-button" onclick="submitForm('login')">Submit</button>
+    </div>
+
+    <div class="button-space">
+        <button class="button3d" onclick="showSignupForm()">Sign Up</button>
+        <button class="button3d" onclick="showLoginForm()">Login</button>
+    </div>
+
+    <script>
+        function showSignupForm() {
+            document.querySelector('.signup-form').style.display = 'block';
+            document.querySelector('.login-form').style.display = 'none';
+        }
+
+        function showLoginForm() {
+            document.querySelector('.signup-form').style.display = 'none';
+            document.querySelector('.login-form').style.display = 'block';
+        }
+
+        function submitForm(formType) {
+            if (formType === 'signup') {
+                // Get input values from the signup form
+                var name = document.getElementById('name').value;
+                var address = document.getElementById('address').value;
+                var userId = document.getElementById('userId').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+                var dob = document.getElementById('dob').value;
+
+                // Now you can use these variables as needed, for example, send them to a server or perform validations.
+                // For now, let's just log them to the console.
+                console.log('Name:', name);
+                console.log('Address:', address);
+                console.log('User ID:', userId);
+                console.log('Password:', password);
+                console.log('Confirm Password:', confirmPassword);
+                console.log('Date of Birth:', dob);
+
+                // You can continue your form submission logic here.
+                alert('Signup form submitted!');
+            } else if (formType === 'login') {
+                // Handle login form submission
+                var loginUserId = document.getElementById('loginUserId').value;
+                var loginPassword = document.getElementById('loginPassword').value;
+
+                // Log or use the login values as needed
+                console.log('Login User ID:', loginUserId);
+                console.log('Login Password:', loginPassword);
+
+                alert('Login form submitted!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Buttons</title>
+    <style>
+        /* CSS for centering the image */
+        #image-container {
+            text-align: center;
+        }
+        /* CSS for hiding additional data initially */
+        #additional-data {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img id="main-image" src="initial-image.jpg" alt="Initial Image">
+    </div>
+    <button id="change-image-button" onclick="changeImage()">SHOPS NEAR BY </button>
+    <div id="additional-data">
+        <!-- Additional data here -->
+        <p>This is additional data you want to display.</p>
+    </div>
+    <button id="show-data-button" onclick="showData()">Show Data</button>
+
+    <script>
+        // JavaScript functions to handle button clicks
+        function changeImage() {
+            // Change the image source
+            document.getElementById("main-image").src = "new-image.jpg";
+        }
+
+        function showData() {
+            // Show the additional data by changing its CSS display property
+            document.getElementById("additional-data").style.display = "block";
+        }
+    </script>
+</body>
+</html>
